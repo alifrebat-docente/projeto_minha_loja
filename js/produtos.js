@@ -10,7 +10,7 @@ const listarProdutos = () => {
     sectionCards.innerHTML = ''
 
     //PERCORRENDO O ARRAY DE PRODUTOS
-    produtos.forEach((elem, i)=>{
+    produtos.forEach((elem, i) => {
         //CRIANDO O ELEMENTO div E DEFININDO O ATRIBUTO CARD
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
@@ -26,7 +26,7 @@ const listarProdutos = () => {
 
         //CRIANDO O ELEMENTO h2 E ATRIBUINDO O VALOR UNITÁRIO DEIXANDO EM DUAS CASAS DECIMAIS E SUBSTITUINDO PONTO POR VÍRGULA
         const h2Card = document.createElement('h2')
-        h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.',',')}`
+        h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
         //CRIANDO O ELEMENTO button E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICONAR
         const btnCard = document.createElement('button')
@@ -48,3 +48,40 @@ const listarProdutos = () => {
 
 //CHAMANDO A FUNÇÃO listarProdutos
 listarProdutos()
+
+//MONTANDO OS MENUS SEÇÕES
+const menuSecoes = () => {
+    const mapSecoes = new Map()
+
+    produtos.forEach((elem)=>{
+        mapSecoes.set(elem.id_secao, elem)
+    })
+
+    const secoesFiltradas = Array.from(mapSecoes.values())
+
+    console.log(secoesFiltradas)
+
+    return secoesFiltradas
+}
+
+//FUNÇÃO PARA INSERIR OS MENUS NA LISTA
+const carregaSecoes = () =>{
+    const ulMenuSecoes = document.querySelector('#menu-secoes')
+
+    ulMenuSecoes.innerHTML = ''
+
+    menuSecoes().forEach((elem, i)=>{
+        const liMenu = document.createElement('li')
+    
+        const aMenu = document.createElement('a')
+        aMenu.setAttribute('href', '#')
+        aMenu.setAttribute('class' , 'lnk-secao')
+        aMenu.innerHTML = elem.secao
+
+        liMenu.appendChild(aMenu)
+        
+        ulMenuSecoes.appendChild(liMenu)
+    })
+}
+
+carregaSecoes()
