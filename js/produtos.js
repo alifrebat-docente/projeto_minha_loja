@@ -1,5 +1,7 @@
 //IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import { produtos } from './lista_produtos.js'
+//IMPORTANDO A FUNÇÃO PARA ADICIONAR ITENS AO CARRINHO DO ARQUIVO carrinho.js
+import { addItem } from './carrinho.js'
 
 //CARREGANDO PRODUTOS
 const carregandoProdutos = (idSecao) => {
@@ -96,7 +98,7 @@ const filtroProduto = (idSecao) => {
 //PEGANDO O INPUT DO DOM
 const inputPesquisa = document.querySelector('#pesquisa')
 
-inputPesquisa.addEventListener('input',(evt)=>{
+inputPesquisa.addEventListener('input', (evt) => {
     //PEGANDO O VALOR DO input E CONVERTENDO EM MINÚSCULO
     let txtInput = evt.target.value.toLowerCase()
 
@@ -138,7 +140,8 @@ const montaCards = (objProdutos) => {
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
-        btnCard.addEventListener('click',()=>{
+        btnCard.addEventListener('click', () => {
+            addItem(elem)
             window.location.href = 'paginas/carrinho.html'
         })
 
