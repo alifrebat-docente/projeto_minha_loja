@@ -2,18 +2,18 @@
 @import url(style_estutura_pagina.css);
 
 /*FORMATANDO SECTION CARRINHO*/
-#carrinho{
+#carrinho {
     width: 1000px;
     min-height: 600px;
     margin: 20px 0px;
     padding: 10px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
 /*FORMATANDO A SECTION itens-carrinho*/
-.item{
+.item {
     width: 100%;
     height: 120px;
     margin: 20px 0px;
@@ -24,28 +24,32 @@
     border-bottom: 1px solid var(--cor02);
 }
 
-.img-item img{
-    width: 100px;
-    height: 100px;
+.img-item, .img-item img {
+    width: 60px;
+    height: 60px;
 }
 
-.descricoes-itens{
+.img-item{
+    margin-right: 35px;
+}
+
+.descricoes-itens {
     width: 600px;
     height: 120px;
     margin: 20px 0px;
 }
 
-.descricao{
+.descricao {
     width: 100%;
     height: 40px;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: bold;
     padding: 15px;
 }
 
-.valores{
+.valores {
     width: 100%;
     height: 80px;
     display: flex;
@@ -53,7 +57,7 @@
     justify-content: space-around;
 }
 
-.input-item{
+.input-item {
     width: 45px;
     text-align: center;
     border: 1px solid var(--cor02);
@@ -61,21 +65,23 @@
     padding: 5px;
 }
 
-.img-remover img{
+img {
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 
 /*FORMATANDO A DIV VALORES-CARRINHO*/
-#valores-carrinho{
+#valores-carrinho {
     width: 30%;
     min-height: 600px;
     margin: 0px 10px;
     padding: 15px;
 }
 
-#div-cep, #div-calc-valor, #div-calc-valor-pagar{
+#div-cep,
+#div-calc-valor,
+#div-calc-valor-pagar {
     width: 100%;
     min-height: 80px;
     margin: 20px 0px;
@@ -88,7 +94,7 @@
     border-radius: 8px;
 }
 
-.titulo-valores-carrinho{
+.titulo-valores-carrinho {
     margin: 20px;
     text-transform: uppercase;
     background-color: var(--cor02);
@@ -98,13 +104,13 @@
     color: var(--branca);
 }
 
-.valor{
+.valor {
     font-size: 1.8em;
-    color:  var(--cor02);
+    color: var(--cor02);
     font-weight: bold;
 }
 
-.btn-carrinho{
+.btn-carrinho {
     width: 260px;
     height: 80px;
     margin: 10px 0px;
@@ -116,10 +122,10 @@
     font-size: 1.3em;
 }
 
-#btn-continuar{
+#btn-continuar {
     background-color: var(--cor03);
 }
 
-#btn-finalizar{
+#btn-finalizar {
     background-color: var(--cor02);
 }
