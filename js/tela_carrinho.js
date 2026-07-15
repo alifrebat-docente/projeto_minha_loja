@@ -1,4 +1,4 @@
-import { listItens } from "./carrinho.js"
+import { listItens, removeItem } from "./carrinho.js"
 
 const montaTelaCarrinho = ()=>{
     const sectionItensCarrinho = document.querySelector('#itens-carrinho')
@@ -50,6 +50,17 @@ const montaTelaCarrinho = ()=>{
         imgRemover.setAttribute('src', '../imagens/icones/remover.png')
         imgRemover.setAttribute('alt', 'remover')
 
+        imgRemover.addEventListener('click',()=>{
+            if(confirm(`Tem certeza que deseja remover ${elem.descricao_produto} do carrinho?`)){
+                removerItemTela(i)
+            }
+        })
+
+        /*const aRemover = document.createElement('a')
+        aRemover.setAttribute('href','#')
+        aRemover.setAttribute('class', 'seilá')*/
+
+
         divValores.appendChild(pItem)
         divValores.appendChild(divQuant)
         divValores.appendChild(pCalc)
@@ -69,3 +80,9 @@ const montaTelaCarrinho = ()=>{
 }
 
 montaTelaCarrinho()
+
+const removerItemTela = (pos)=>{
+    removeItem(pos)
+
+    montaTelaCarrinho()
+}
