@@ -2,41 +2,57 @@
 
 
 /*FORMATANDO SECTION formulario*/
-#form-pessoa{
+#form-pessoa {
     width: 1000px;
     min-height: 600px;
     padding: 20px;
 }
 
-h3{
+h3 {
     text-align: center;
     text-transform: uppercase;
     margin: 30px 0px;
 }
 
-label{
+label {
     display: block;
-    margin: 20px 0px;
+    margin: 30px 0px;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
-.input01, .input02{
+.input01,
+.input02 {
     border: none;
-    border-bottom: 1px solid var(--cor02) ;
+    border-bottom: 1px solid var(--cor02);
     font-size: 1.3em;
     padding: 5px;
 }
 
-.input01{
+.input01 {
     width: 800px;
 }
 
-.input02{
+.input02 {
     width: 400px;
 }
 
-#div-btns{
+#inputRadios {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.9em;
+}
+
+.inputOP {
+    width: 25px;
+    height: 25px;
+    margin: 0px 15px;
+    cursor: pointer;
+}
+
+#div-btns {
     height: 60px;
     margin: 40px 0px;
     display: flex;
@@ -44,11 +60,10 @@ label{
     justify-content: center;
 }
 
-#div-btns button{
+#div-btns button {
     width: 200px;
     height: 40px;
     margin-left: 20px;
-    background-color: var(--cor01);
     border: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -56,13 +71,22 @@ label{
     letter-spacing: 5px;
 }
 
-.oculto{
+#btn-add{
+    color: var(--cor02);
+    background-color: var(--cor03);
+}
+
+#btn-limpar{
+    color: var(--branca);
+    background-color: var(--vermelha);
+}
+
+.oculto {
     display: none;
 }
 
-#div-dados-endereco{
-    
-    margin: 25px 15px ;
+#div-dados-endereco {
+    margin: 25px 15px;
     padding: 20px;
 
 }
